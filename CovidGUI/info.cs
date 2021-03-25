@@ -14,28 +14,28 @@ namespace CovidGUI
         #region Hospital Info
         private static string strHospitalName;
         private static string strHospitalAddress;
-        private static bool bType;
-        private static char cProvince;
+        private static string bType;
+        private static string cProvince;
         #endregion
 
         #region Hospital Info Getter and Setters
         public string Hospital_Name { get => strHospitalName; set => strHospitalName = value; }
         public string Hospital_Address { get => strHospitalAddress; set => strHospitalAddress = value; }
-        public bool BType { get => bType; set => bType = value; }
-        public char CProvince { get => cProvince; set => cProvince = value; }
+        public string BType { get => bType; set => bType = value; }
+        public string CProvince { get => cProvince; set => cProvince = value; }
         public int ArraySize { get => iArraySize; set => iArraySize = value; }
         #endregion
 
         #region Patient Info
-        private static string[] strID;
-        private static string[] strMedAid;
-        private static string[] strName;
-        private static string[] strSurname;
-        private static string[] strRefDoc;
-        private static char[] cBloodType;
-        private static string[] strAllergies;
-        private static bool[] bHasCovid;
-        private static string[] strVaccine;
+        private string[] strID;
+        private string[] strMedAid;
+        private string[] strName;
+        private string[] strSurname;
+        private string[] strRefDoc;
+        private string[] cBloodType;
+        private string[] strAllergies;
+        private string[] bHasCovid;
+        private string[] strVaccine;
         #endregion
 
         #region Get Patient Info
@@ -44,9 +44,9 @@ namespace CovidGUI
         public string[] StrName { get => strName; }
         public string[] StrSurname { get => strSurname; }
         public string[] StrRefDoc { get => strRefDoc; }
-        public char[] CBloodType { get => cBloodType; }
+        public string[] CBloodType { get => cBloodType; }
         public string[] StrAllergies { get => strAllergies; }
-        public bool[] BHasCovid { get => bHasCovid; }
+        public string[] BHasCovid { get => bHasCovid; }
         public string[] StrVaccine { get => strVaccine; }
         #endregion
 
@@ -61,14 +61,13 @@ namespace CovidGUI
             strRefDoc = new string[size];
             strAllergies = new string[size];
             strVaccine = new string[size];
-
-            cBloodType = new char[size];
-            bHasCovid = new bool[size];
+            cBloodType = new string[size];
+            bHasCovid = new string[size];
         }
         #endregion
 
         #region Add a Patient
-        public void AddPatient(string newID, string newMedAid, string newName, string newSurname, string newRefDoc, char newBloodType, string newAllergies, bool newHadCovid, string newVaccine)
+        public void AddPatient(string newID, string newMedAid, string newName, string newSurname, string newRefDoc, string newBloodType, string newAllergies, string newHadCovid, string newVaccine)
         {
             strID[iCounter] = newID;
             strMedAid[iCounter] = newMedAid;
@@ -79,9 +78,9 @@ namespace CovidGUI
             strAllergies[iCounter] = newAllergies;
             bHasCovid[iCounter] = newHadCovid;
             strVaccine[iCounter] = newVaccine;
-
             iCounter++;
         }
+
         #endregion
     }
 }
